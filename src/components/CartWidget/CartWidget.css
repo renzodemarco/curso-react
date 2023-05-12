@@ -1,0 +1,20 @@
+.cart-widget {
+  margin-top: .2em;
+  width: 2em;
+}
+
+.cart-container {
+  width: 3.6em;
+  height: 3.6em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #eb3131;
+}
+
+.cart-container p {
+  color: #fff;
+  font-size: .7em;
+}

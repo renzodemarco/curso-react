@@ -1,0 +1,41 @@
+.contador {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60px;
+    margin: 4px 0 10px;
+}
+
+.contador button {
+    height: 26px;
+    width: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8f7474;
+    border: none;
+}
+
+.contador button:hover {
+    background-color: #a12c2c;
+}
+
+h3 {
+    width: 100%;
+    font-weight: normal;
+    text-align: center;
+    color: #888;
+    font-size: 12px;
+}
+
+h2 {
+    font-size: 16px;
+}
