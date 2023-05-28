@@ -1,5 +1,5 @@
 import Contact from "./Contact";
-import Index from "./Index";
+import Index from "./Index.jsx";
 import Products from "./Products";
 import QueOndaCara from "./QueOndaCara";
 import SizeGuide from "./SizeGuide";

@@ -66,3 +66,12 @@ a:hover {
     justify-content: center;
     align-items: center;
 }
+
+.categories {
+    color: #eb3131;
+    font-size: .9em;
+}
+
+.categories:hover {
+    color: #fd8989;
+}
