@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import carrito from '../../assets/carrito.svg';
 import './CartWidget.css';
 import { useContext } from 'react';
-import CartContext from '../../contexts/CartContext';
+import {CartContext} from '../../contexts/CartContext';
 
 function CartWidget() {
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SizeGuide = () => {
+const GuiaDeMedidas = () => {
   return (
     <>
         <h1>Guía de Medidas</h1>
@@ -8,4 +8,4 @@ const SizeGuide = () => {
 )
 }
 
-export default SizeGuide
+export default GuiaDeMedidas

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer"
 
-const Products = () => {
+const Productos = () => {
 
     let category = useParams().category;
     switch (category) {
@@ -24,4 +24,4 @@ const Products = () => {
     )
 }
 
-export default Products
+export default Productos

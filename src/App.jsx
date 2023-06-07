@@ -1,51 +1,36 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import './styles.css';
 import NavBar from './components/NavBar/NavBar';
+import CartDisplay from './components/CartDisplay/CartDisplay'
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import {Contact, SizeGuide, Index, Products, QueOndaCara} from './pages/index'
-import CartContext from './contexts/CartContext';
-import { useState } from 'react';
+import {Contacto, GuiaDeMedidas, Inicio, Productos, QueOndaCara} from './pages/index'
+import { CartProvider } from './contexts/CartContext';
+import Tasks from './tasks/Tasks';
+import TaskDetail from './tasks/TaskDetail';
+import UserFormContainer from './components/UserFormContainer/UserFormContainer';
+import { OrderProvider } from './contexts/OrderContext';
 
 function App() {
-
-  const [cart, setCart] = useState([]);
-
-  const addToCart = (item, quantity) => {
-
-    const newItem = {...item, quantity};
-    const newCart = [...cart]
-    const isInCart = newCart.find(prod=> prod.id === newItem.id)
-
-    if (isInCart) {
-      isInCart.quantity += quantity;
-    }
-    else {
-      newCart.push(newItem)
-    }
-    setCart(newCart);
-  }
-
-  const cartQuantity = () => {
-    return cart.reduce((acc, prod)=> acc + prod.quantity, 0)
-  }
 
   return (
     <>
     <BrowserRouter>
-      <CartContext.Provider value={{cart, addToCart, cartQuantity}}>
+      <CartProvider>
+      <OrderProvider>
         <NavBar/>
         <Routes>
-          <Route path='/' element={<Index/>}></Route>
+          <Route path='/' element={<Inicio/>}></Route>
           <Route path='/que-onda-cara' element={<QueOndaCara/>}></Route>
-          <Route path='/products' element={<Products/>}></Route>
-          <Route path='/products/:category' element={<Products/>}></Route>
-          <Route path='/item/:id' element={<ItemDetailContainer />}></Route>
-          <Route path='/size-guide' element={<SizeGuide/>}></Route>
-          <Route path='/contact' element={<Contact/>}></Route>
-          <Route path='/cart' ></Route>
+          <Route path='/products' element={<Tasks/>}></Route>
+          <Route path='/products/:category' element={<Tasks/>}></Route>
+          <Route path='/product/:id' element={<TaskDetail/>}></Route>
+          <Route path='/size-guide' element={<GuiaDeMedidas/>}></Route>
+          <Route path='/contact' element={<Contacto/>}></Route>
+          <Route path='/cart' element={<CartDisplay/>}></Route>
+          <Route path='/form' element={<UserFormContainer/>}></Route>
         </Routes>
-      </CartContext.Provider>
+      </OrderProvider>
+      </CartProvider>
     </BrowserRouter>
     </>
   );

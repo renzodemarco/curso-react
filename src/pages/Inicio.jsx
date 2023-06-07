@@ -1,7 +1,7 @@
 import React from 'react'
 import ItemListContainer from '../components/ItemListContainer/ItemListContainer'
 
-const Index = () => {
+const Inicio = () => {
     return (
         <>
             <h1>Bienvenido/a a la web de CARA® moda circular</h1>
@@ -13,4 +13,4 @@ const Index = () => {
     )
 }
 
-export default Index
+export default Inicio

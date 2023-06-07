@@ -1,6 +1,6 @@
 import Item from "../Item/Item";
 
-function ItemList({products, category}) {
+function ItemList({products}) {
 
     return (
         <>

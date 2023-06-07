@@ -1,8 +1,8 @@
 import ItemList from "../ItemList/ItemList";
-import {getProducts} from "../../functions/getProducts";
 import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 import './ItemListContainer.css'
+import { getTasks } from "../../services/services";
 
 
 function ItemListContainer() {
@@ -11,15 +11,9 @@ function ItemListContainer() {
     const category = useParams().category;
 
     useEffect(() => {
-        getProducts()
-            .then(res => {
-                if (category) {
-                    setProducts(res.filter(prod => prod.category === category))
-                } else {
-                setProducts(res)
-                }
-            })
-    }, [category])
+        getTasks('stock-prendas').then(products => {
+            setProducts(products)})
+    }, [])
 
     return (
         <div className="itemListContainer">

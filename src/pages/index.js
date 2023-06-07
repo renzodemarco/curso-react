@@ -1,7 +1,7 @@
-import Contact from "./Contact";
-import Index from "./Index.jsx";
-import Products from "./Products";
+import Contacto from "./Contacto";
+import Inicio from "./Inicio";
+import Productos from "./Productos";
 import QueOndaCara from "./QueOndaCara";
-import SizeGuide from "./SizeGuide";
+import GuiaDeMedidas from "./GuiaDeMedidas";
 
-export {Contact, Index, Products, QueOndaCara, SizeGuide}
+export {Contacto, Inicio, Productos, QueOndaCara, GuiaDeMedidas}
