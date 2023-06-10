@@ -96,7 +96,7 @@ const UserForm = ({ onSend }) => {
                         handleError()}}
                     onBlur={handleError}/>
             </div>
-            <button type="submit" className="buyButton" disabled={buttonDisabled}>Realizar compra</button>
+            <button type="submit" className="buyButton" disabled={buttonDisabled}>Finalizar compra</button>
             {validateError && <p className="error">{validateError}</p>}
         </form>
     )

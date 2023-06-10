@@ -26,7 +26,7 @@ const Carrito = () => {
                             <h2 className='totalPrice'>Precio total: ${totalPrice()}</h2>
                             <Link to='/form'>
                                 <button>
-                                Finalizar mi compra
+                                Realizar compra
                                 </button>
                             </Link>
                             <button onClick={clearCart}>Vaciar Carrito</button>
