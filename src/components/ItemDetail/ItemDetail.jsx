@@ -1,50 +1,53 @@
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
-import { Button } from 'react-bootstrap'
-import {CartContext} from '../../contexts/CartContext'
+import { CartContext } from '../../contexts/CartContext'
 import { useContext, useState } from 'react'
-import { Success } from '../Alerts/Alerts'
+import AddToCartModal from '../AddToCartModal/AddToCartModal'
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({ item }) => {
 
-    const {addToCart} = useContext(CartContext)
+    const { addToCart } = useContext(CartContext)
     const [quantity, setQuantity] = useState(1);
-    const [showAlert, setShowAlert] = useState(false);
-    
+    const [showModal, setShowModal] = useState(false);
+
     const addCount = () => {
         if (quantity < item.stock)
-            setQuantity(previousQuantity => previousQuantity + 1)
+            setQuantity(previousQuantity => previousQuantity + 1);
     }
 
     const susCount = () => {
         if (quantity > 1)
-            setQuantity(previousQuantity => previousQuantity - 1)
+            setQuantity(previousQuantity => previousQuantity - 1);
     }
 
-    const handleClick = () => {
+    const handleAddClick = () => {
         addToCart(item, quantity);
-        setShowAlert(true)
+        setShowModal(true)
     }
 
     return (
         <div className='detail'>
             <div className='imgContainer'>
-            <img src={item.photo} alt={item.title}/>
+                <img src={item.photo} alt={item.title} />
             </div>
             <div className='detailContainer'>
                 <h1 className='item-title'>{item.title}</h1>
                 <p>{item.description}</p>
-                <p>Tamaño: <span>{item.size}</span></p>
-                <p>ID: {item.id}</p>
-                <h2>${item.price}</h2>
-                <div className='addContainer'>
-                    <ItemCount stock={item.stock} handleAddCount={addCount} handleSusCount={susCount} count={quantity}/>
-                    <Button 
-                    className='addToCart' 
-                    onClick={handleClick}>Agregar al carrito</Button>
-                    {showAlert && <Success msg={"El producto se ha agregado al carrito"}/>}
-                </div>
+                <p>Tamaño: <b>{item.size}</b></p>
+                <p>Precio <b>${item.price}</b></p>
             </div>
+            <div className='addContainer'>
+                <ItemCount stock={item.stock} addCount={addCount} susCount={susCount} count={quantity} />
+                <button
+                    className='addToCart'
+                    onClick={handleAddClick}>Agregar al carrito
+                </button>
+            </div>
+            <AddToCartModal
+                msg="El producto se ha agregado al carrito"
+                show={showModal}
+                onHide={() => setShowModal(false)}
+            />
         </div>
     )
 }

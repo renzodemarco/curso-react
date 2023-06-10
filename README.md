@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# CARA® | Moda circular
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+En este proyecto creé un sitio web para la marca de ropa sustentable CARA. Este es un proyecto de moda circular que fomenta la reutilización de la ropa, entendiendo a la moda como un principio circular y revalorando a las diferentes prendas por su calidad de confección, y no por las tendencias vigentes.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Características
 
-### `npm start`
+El sitio contiene una página de inicio con un breve mensaje de bienvenida y un carousel donde se ven algunas de las prendas disponibles. Ya en la sección **PRODUCTOS** se desplegarán todas las prendas disponibles en la colección de Firestore, pudiendo también elegir verlas por categoría. Haciendo click en los productos, se abrirá el detalle con la descripción y la opción de agregar uno o más items al carrito de acuerdo a su disponibilidad.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+En todo momento habrá un ícono con un **carrito** en la parte superior izquierda, el cual al hacer click nos llevará a nuestro carrito. Allí veremos los productos que hemos agregado al carrito, junto con algunas de sus características y su cantidad. También se observará el precio del carrito completo, un botón para vaciar el carrito y otro para proceder con la compra. Todos estos datos estarán también alojados en el **localStorage**, por lo que quedarán guardados incluso cuando se actualice el sitio.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Cuando el usuario considere que el carrito esté lleno, clickeará un botón para proceder con la compra que lo llevará a un form el cual se completa con información del usuario. Una vez hecho esto, se clickea en el botón de finalizar compra, enviando los datos de usuario, junto con el carrito, la fecha y el precio total a una colección de Firestore guardándose en la colección "orders".
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Ejemplo de uso y navegación](./public/cara-moda.gif)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Instalación
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para este proyecto se utilizó **REACT JS**. Si no tienes un proyecto base instalado en tu PC, deberás instalarlo con el siguiente comando:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`npx create-react-app <nombre-de-la-app>`
 
-### `npm run eject`
+Una vez creado, se inicializa con el comando:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`npm start`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Se utlizaron biblotecas de bootstrap y react-boostrap para dar estilo en algunos componentes y para solucionar ciertos aspectos del diseño como los dropdwons o los modals. Se instala con el siguiente comando en la terminal:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`npm install boostrap react-boostrap`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Para lograr la navegación sin refrescar la pantalla se utilizo **React Router DOM**. Este se instala con el siguiente comando:
 
-## Learn More
+`npm install react-router-dom`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Licencia
 
-### Code Splitting
+Todos los derechos reservados.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Notas adicionales
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Desafortunadamente, el proyecto no permite actualizar el stock de la base de datos de Firestore a medida que se agregan productos al carrito. En un principio esto permitiría que se agreguen más productos al carrito que los que hay en el stock.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+El principal objetivo a futuro es lograr que cada producto agregado haga una llamada a Firestore para que lo reste del stock y, una vez que este llegue a cero, mostarnos el producto como no disponible.

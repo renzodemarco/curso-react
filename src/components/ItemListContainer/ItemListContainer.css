@@ -5,11 +5,3 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
-
-.card {
-    flex-basis: 14em;
-    max-width: 14em;
-    display: inline-block;
-    margin: 10px;
-
-}

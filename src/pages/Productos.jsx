@@ -18,7 +18,7 @@ const Productos = () => {
 
     return (
         <>
-            <h1>Productos {category && ` / ${category}` }</h1>
+            <h1>Productos <span>{category && ` / ${category}`}</span> </h1>
             <ItemListContainer />
         </>
     )

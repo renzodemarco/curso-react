@@ -1,0 +1,14 @@
+.closeAlertButton {
+    background-color: #a12c2c;
+    color: #fff;
+    font-weight: normal;
+    padding: .5em .6em;
+    border: none;
+    border-radius: 5px;
+    margin: 1em;
+}
+
+.closeAlertButton:hover {
+    background-color: #eb3131;
+    transition: .2s;
+}

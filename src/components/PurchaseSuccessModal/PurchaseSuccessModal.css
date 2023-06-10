@@ -1,0 +1,9 @@
+.purchaseSuccessContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.purchaseSuccessContainer {
+    font-size: 1.1em;
+}

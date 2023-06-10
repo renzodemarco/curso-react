@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import {CartContext} from '../../contexts/CartContext'
 import { Link } from 'react-router-dom';
+import CartItem from '../CartItem/CartItem';
 import './CartDisplay.css'
 
 const Carrito = () => {
@@ -10,36 +11,37 @@ const Carrito = () => {
     return (
     <>
         <h1>Carrito de compras</h1>
-        <ul className='cart-display'>
-            {cart.map(item => {
-                return  (
-                <li key={item.id}>
-                    <h2 className='item-title'>{item.title}</h2>
-                    <p>Tamaño: <span>{item.size}</span></p>
-                    <h2>${item.price * item.quantity}</h2>
-                    <p>Cantidad: <span>{item.quantity}</span></p>
-                    <button onClick={()=> removeItem(item.id)}>Eliminar item</button>
-                </li>)
-                }
-            )}
-        </ul>
-        <div>
+        <div className='cartDisplayContainer'>
             {cart.length > 0 ? 
-            <>
-                <h2>Precio total: ${totalPrice()}</h2>
-                <button onClick={clearCart}>Vaciar Carrito</button>
-                <button>
-                    <Link to='/form'>
-                    Finalizar mi compra
+                <>
+                    <ul className='cartDisplay'>
+                        {cart.map(item => {
+                            return (
+                                <CartItem key={item.id} item={item} handleRemove={removeItem}/>
+                            )}
+                        )}
+                    </ul>
+                    <div className='cartButtonDisplay'>
+                        <>
+                            <h2 className='totalPrice'>Precio total: ${totalPrice()}</h2>
+                            <Link to='/form'>
+                                <button>
+                                Finalizar mi compra
+                                </button>
+                            </Link>
+                            <button onClick={clearCart}>Vaciar Carrito</button>
+                        </> 
+                    </div>
+                </>
+                    :
+                <div className='emptyCartContainer'>
+                    <p className='emptyCart'>Tu carrito de compras está vacío.</p>
+                    <Link to='/'>
+                        <button className='goIndexButton'>Regresar al Inicio</button>
                     </Link>
-                </button>
-            </> :
-            <>
-                <h2>Tu carrito de compras está vacío.</h2>
-                <h2>Regresar al <Link className='link-inicio' to='/'>INICIO</Link></h2>
-            </>}
+                </div>
+            }
         </div>
-
     </>
     )
 }

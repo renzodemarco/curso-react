@@ -19,9 +19,6 @@ function NavBar() {
                         <Link to='/'>INICIO</Link>
                     </li>
                     <li>
-                        <Link to='/que-onda-cara'>¿QUÉ ONDA CARA®?</Link>
-                    </li>
-                    <li>
                         <Dropdown as={ButtonGroup}>
                             <Link to={'/products'}>PRODUCTOS</Link>
                             <Dropdown.Toggle id="dropdown-split-basic" />
@@ -34,10 +31,10 @@ function NavBar() {
                         </Dropdown>
                     </li>
                     <li>
-                        <Link to='/size-guide'>GUÍA DE MEDIDAS</Link>
+                        <Link to='/que-onda-cara'>¿QUÉ ONDA CARA®?</Link>
                     </li>
                     <li>
-                        <Link className='nav-li' to='/contact'>CONTACTO</Link>
+                        <Link to='/size-guide'>GUÍA DE MEDIDAS</Link>
                     </li>
                 </ul>
             </nav>

@@ -7,19 +7,21 @@ import { getTasks } from "../../services/services";
 
 function ItemListContainer() {
 
-    const [products, setProducts] = useState([]);
-    const category = useParams().category;
+    const {category} = useParams();
+
+    const [tasks, setTasks] = useState();
 
     useEffect(() => {
-        getTasks('stock-prendas').then(products => {
-            setProducts(products)})
-    }, [])
+        getTasks(category).then(tasks => {
+            setTasks(tasks)})
+    }, [category])
+    
+    if (!tasks) return (<h1>Cargando...</h1>);
 
     return (
         <div className="itemListContainer">
-        <ItemList products={products} category={category}/>
+            <ItemList products={tasks}/>
         </div>
     )
 }
-
 export default ItemListContainer;
