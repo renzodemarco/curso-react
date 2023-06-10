@@ -1,6 +1,6 @@
 # CARA® | Moda circular
 
-En este proyecto creé un sitio web para la marca de ropa sustentable CARA. Este es un proyecto de moda circular que fomenta la reutilización de la ropa, entendiendo a la moda como un principio circular y revalorando a las diferentes prendas por su calidad de confección, y no por las tendencias vigentes.
+En este proyecto creé un sitio web para la marca de ropa sustentable CARA. Esta es una marca de venta de ropa que fomenta su reutilización, entendiendo a la moda como un principio circular y revalorando a las diferentes prendas por su calidad de confección y no por las tendencias vigentes.
 
 
 ## Características
@@ -11,17 +11,19 @@ En todo momento habrá un ícono con un **carrito** en la parte superior izquier
 
 Cuando el usuario considere que el carrito esté lleno, clickeará un botón para proceder con la compra que lo llevará a un form el cual se completa con información del usuario. Una vez hecho esto, se clickea en el botón de finalizar compra, enviando los datos de usuario, junto con el carrito, la fecha y el precio total a una colección de Firestore guardándose en la colección "orders".
 
+El sitio está creado para una resolución de 1349px de ancho de pantalla. Por el momento no es responsive.
+
 
 ![Ejemplo de uso y navegación](./public/cara-moda.gif)
 
 
 ## Instalación
 
-Para este proyecto se utilizó **REACT JS**. Si no tienes un proyecto base instalado en tu PC, deberás instalarlo con el siguiente comando:
+Para este proyecto se utilizó **REACT JS**. Para instalar React se debe utilizar el siguiente comando en la consola:
 
 `npx create-react-app <nombre-de-la-app>`
 
-Una vez creado, se inicializa con el comando:
+Una vez instalado, se inicializa con el comando:
 
 `npm start`
 
@@ -41,6 +43,8 @@ Todos los derechos reservados.
 
 ## Notas adicionales
 
-Desafortunadamente, el proyecto no permite actualizar el stock de la base de datos de Firestore a medida que se agregan productos al carrito. En un principio esto permitiría que se agreguen más productos al carrito que los que hay en el stock.
+Desafortunadamente, el proyecto no permite actualizar el stock de la base de datos de Firestore a medida que se agregan productos al carrito. Esto genera un error en que se permiten agregar más productos al carrito que los que hay en el stock.
 
 El principal objetivo a futuro es lograr que cada producto agregado haga una llamada a Firestore para que lo reste del stock y, una vez que este llegue a cero, mostarnos el producto como no disponible.
+
+Además, estoy trabajando en una versión responsive para que el display del sitio sea adaptable a diferentes resoluciones de pantalla.

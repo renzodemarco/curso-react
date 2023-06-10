@@ -25,7 +25,9 @@ const ItemDetailContainer = () => {
     if (!item) return (
         <>
             <h1>{msg}</h1>
-            {fail && <Link to='./'>Regresar al inicio</Link>}
+            {fail && <Link to='/'>
+                        <button className='goIndexButton'>Regresar al Inicio</button>
+                    </Link>}
         </>   
     )
 
