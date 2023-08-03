@@ -23,10 +23,10 @@ function NavBar() {
                             <Link to={'/products'}>PRODUCTOS</Link>
                             <Dropdown.Toggle id="dropdown-split-basic" />
                             <DropdownMenu>
-                                <Dropdown.Item><Link to={'/products/camisas'} className="categories">CAMISAS</Link></Dropdown.Item>
-                                <Dropdown.Item><Link to={'/products/abrigos'} className="categories">ABRIGOS</Link></Dropdown.Item>
-                                <Dropdown.Item><Link to={'/products/vestidos'} className="categories">VESTIDOS</Link></Dropdown.Item>
-                                <Dropdown.Item><Link to={'/products/chalecos'} className="categories">CHALECOS</Link></Dropdown.Item>
+                                <Dropdown.Item className='categoryContainer'><Link to={'/products/camisas'} className="categories">CAMISAS</Link></Dropdown.Item>
+                                <Dropdown.Item className='categoryContainer'><Link to={'/products/abrigos'} className="categories">ABRIGOS</Link></Dropdown.Item>
+                                <Dropdown.Item className='categoryContainer'><Link to={'/products/vestidos'} className="categories">VESTIDOS</Link></Dropdown.Item>
+                                <Dropdown.Item className='categoryContainer'><Link to={'/products/chalecos'} className="categories">CHALECOS</Link></Dropdown.Item>
                             </DropdownMenu>
                         </Dropdown>
                     </li>

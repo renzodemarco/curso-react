@@ -75,3 +75,7 @@ a {
 .categories:hover {
     color: #fd8989;
 }
+
+.categoryContainer:active {
+    background-color: #eb3131 !important;
+}

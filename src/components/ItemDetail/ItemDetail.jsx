@@ -23,6 +23,7 @@ const ItemDetail = ({ item }) => {
     const handleAddClick = () => {
         addToCart(item, quantity);
         setShowModal(true)
+        setQuantity(1)
     }
 
     return (
